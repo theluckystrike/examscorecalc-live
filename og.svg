@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="ExamScoreCalc — AP, SAT and ACT score calculators">
+  <rect width="1200" height="630" fill="#0F172A"/>
+  <g font-family="system-ui,-apple-system,Segoe UI,sans-serif">
+    <rect x="92" y="86" width="116" height="116" rx="26" fill="#DBEAFE"/>
+    <text x="150" y="178" font-size="74" font-weight="800" fill="#1E40AF" text-anchor="middle">5</text>
+    <text x="232" y="176" font-size="54" font-weight="700" fill="#FFFFFF">Exam<tspan font-weight="800">Score</tspan>Calc</text>
+    <text x="92" y="332" font-size="64" font-weight="800" fill="#FFFFFF" letter-spacing="-2">Estimate your exam score</text>
+    <text x="92" y="408" font-size="38" font-weight="500" fill="#94A3B8">AP &#183; SAT &#183; ACT &#8212; free, updated for 2025&#8211;26, no signup.</text>
+    <rect x="92" y="468" width="230" height="96" rx="16" fill="#FFFBEB"/>
+    <text x="207" y="506" font-size="14" font-weight="700" letter-spacing="2" fill="#B45309" text-anchor="middle">YOUR ESTIMATE</text>
+    <text x="207" y="550" font-size="44" font-weight="800" fill="#78350F" text-anchor="middle">5 / 5</text>
+    <text x="1108" y="598" font-size="26" font-weight="600" fill="#64748B" text-anchor="end">examscorecalc.com</text>
+  </g>
+</svg>
