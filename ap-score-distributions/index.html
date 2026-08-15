@@ -25,7 +25,7 @@
 .esc-page .byline a{color:var(--s500);text-decoration:none}
 .esc-page .byline a:hover{color:var(--brand)}
 .esc-page .hint{font-size:12px;color:var(--s500);margin-top:8px;line-height:1.6}
-.esc-page .examlist{list-style:none;margin:10px 0 0;padding:0;max-height:210px;overflow:auto;border:1px solid var(--s200);border-radius:var(--radius);background:var(--card);-webkit-overflow-scrolling:touch}
+.esc-page .examlist{position:relative;list-style:none;margin:10px 0 0;padding:0;max-height:210px;overflow:auto;border:1px solid var(--s200);border-radius:var(--radius);background:var(--card);-webkit-overflow-scrolling:touch}
 .esc-page .examlist li+li{border-top:1px solid var(--s100)}
 .esc-page .examlist button{width:100%;text-align:left;background:none;border:0;font-family:var(--sans);font-size:14px;font-weight:500;color:var(--s600);padding:11px 14px;cursor:pointer;line-height:1.3}
 .esc-page .examlist button:hover{background:var(--brand-50);color:var(--brand)}
@@ -86,7 +86,7 @@
 <div class='calc'>
 <div>
 <div class='field-group-label'>Pick an exam</div>
-<div class='input-wrap'><input id='q' type='search' placeholder='calculus, biology' autocomplete='off' spellcheck='false' aria-label='Search the exam list'></div>
+<div class='input-wrap'><input id='q' type='search' placeholder='Filter this list' autocomplete='off' spellcheck='false' aria-label='Filter the exam list'></div>
 <ul class='examlist' id='examlist'></ul>
 </div>
 </div>
@@ -226,7 +226,7 @@ el("examlist").addEventListener("click",function(ev){var b=ev.target&&ev.target.
 el("ay-q").addEventListener("input",renderAllYear);
 el("ay-table").addEventListener("click",function(ev){var r=ev.target&&ev.target.closest?ev.target.closest("tr[data-k]"):null;if(!r)return;var k=r.getAttribute("data-k");for(var i=0;i<subjects.length;i++){if(sKey(subjects[i])===k){current=subjects[i];break}}markCurrent();renderAll();var c=el("calc");if(c&&c.scrollIntoView)c.scrollIntoView({behavior:"smooth",block:"start"})});
 renderAyCopy();renderCoverage();renderList();renderAll();
-function revealCurrent(){var lb=el("examlist"),cb=lb.querySelector('button[aria-current="true"]');if(lb&&cb)lb.scrollTop=Math.max(0,cb.offsetTop-(lb.clientHeight/2)+(cb.offsetHeight/2))}
+function revealCurrent(){var lb=el("examlist");if(!lb)return;var cb=lb.querySelector('button[aria-current="true"]');if(!cb)return;var lr=lb.getBoundingClientRect(),cr=cb.getBoundingClientRect();lb.scrollTop=Math.max(0,lb.scrollTop+(cr.top-lr.top)-(lb.clientHeight/2)+(cr.height/2))}
 revealCurrent();el("q").addEventListener("input",function(){setTimeout(revealCurrent,0)});
 })();
 </script>
