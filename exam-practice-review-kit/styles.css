@@ -7,3 +7,17 @@
 @media print{.site-header nav,.hero-actions,.checkout-form,.demo-choices,.reset-button,.capacity-demo input,.tomorrow-option,.site-footer,.member-note{display:none!important}body{background:#fff;color:#111;font-size:11pt}.wrap{padding:0}.hero,.preview-layout,.capacity-section,.inside-layout,.practical-section,.purchase-panel{display:block;padding:20px 0;background:white}.hero-art{display:none}.hero h1{font-size:42pt}.hero h1 br{display:none}.hero h1 br:after{content:" "}h2,.preview-copy h2,.capacity-copy h2{font-size:26pt}.workspace-frame{break-inside:avoid;max-width:650px;margin:auto}.preview-section,.inside-section{background:#fff;color:#111;padding:20px 0}.inside-layout p:not(.eyebrow),.inside-layout p.quiet-note,.file-row p{color:#333!important}.demo-card,.capacity-demo{margin-top:20px;break-inside:avoid}.practical-answers details{break-inside:avoid}.file-row{break-inside:avoid}.purchase-card{margin-top:20px}.purchase-section{padding-bottom:0}a{text-decoration:none}}
 
 .ui-icon{display:inline-block;vertical-align:middle;flex-shrink:0}
+
+/* Keep the priced offer in reach after the first purchase button scrolls away. */
+html{scroll-padding-top:120px}
+.site-header{position:sticky;top:0;z-index:30;background:#faf9f4}
+.skip{z-index:40}
+.nav-buy{white-space:nowrap}
+.hero-member{font-size:11px;color:#66716b;line-height:1.7;margin-top:12px}
+.hero-member a{color:#2e6956}
+.demo-next-step{margin-top:20px}
+.demo-next-step .button{width:100%;font-size:12px;padding:13px 14px}
+.demo-next-step p{font-size:10px;line-height:1.7;color:#64756a;margin-top:8px}
+@media(max-width:760px){html{scroll-padding-top:100px}.hero-member{max-width:330px}}
+@media(max-width:370px){.nav-buy span{display:none}.site-header{gap:12px}}
+@media print{.site-header{position:static}.demo-next-step,.hero-member{display:none!important}}

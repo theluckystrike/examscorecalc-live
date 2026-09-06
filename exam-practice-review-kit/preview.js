@@ -21,7 +21,9 @@
   event('offer_view');
   const entry = params.get('from');
   if (entry) event(entry.startsWith('entry_') ? entry : 'entry_' + entry);
+  const entrySource = new Set(['menu', 'home', 'ap', 'sat', 'act']).has(entry) ? entry : 'direct';
   document.querySelectorAll('.checkout-form').forEach(form => {
+    form.elements.namedItem('entry_source').value = entrySource;
     form.addEventListener('submit', () => event('checkout_click'));
   });
 

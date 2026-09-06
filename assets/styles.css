@@ -243,3 +243,14 @@ h1.tool-title{font-size:clamp(24px,5vw,32px);font-weight:800;line-height:1.1;let
 .skip-link:focus{left:0}
 
 .practice-offer{display:flex;gap:24px;align-items:center;justify-content:space-between;border:1px solid #cbdcde;border-left:4px solid #087c78;background:#f0f8f7;padding:24px;margin:26px 0;border-radius:12px}.practice-offer h2{font-size:21px;margin:0 0 8px}.practice-offer p{font-size:15px;line-height:1.6;margin:7px 0;max-width:620px}.practice-offer .practice-offer-note{font-size:13px;color:#536771}.practice-offer>a{flex-shrink:0;font-weight:650;color:#076d68}.nav-links{flex-wrap:wrap}@media(max-width:720px){.practice-offer{display:block}.practice-offer>a{display:inline-block;margin-top:12px}}
+
+/* Purchase links stay visible and usable alongside the free calculators. */
+.nav{height:auto;min-height:64px;max-width:1060px;gap:12px 24px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+.brand{flex-shrink:0}.nav-links{gap:4px 14px}.nav-links a{display:inline-flex;align-items:center;min-height:44px}
+.nav-links a.nav-product{background:#bdf3df;color:#123b35;border-radius:7px;padding:0 13px;font-weight:700;white-space:nowrap}
+.nav-links a.nav-product:hover{background:#d7fbea;color:#123b35}
+.site-head a:focus-visible{outline-color:#fff}
+.practice-offer{flex-direction:column;align-items:flex-start;gap:12px}
+.practice-offer>a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 18px;border-radius:7px;background:#076d68;color:#fff;text-decoration:none;font-size:15px}
+.practice-offer>a:hover{background:#055750}.practice-offer>a:focus-visible{outline-color:#076d68}
+@media(max-width:720px){.nav{gap:4px;padding-left:16px;padding-right:16px}.nav-links{width:100%;gap:2px 14px}.nav-links a{font-size:12px}.practice-offer>a{margin-top:0}}
