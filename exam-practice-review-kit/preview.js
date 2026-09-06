@@ -14,7 +14,7 @@
     sent.add(name);
     fetch(worker + '/event', {
       method: 'POST', mode: 'cors', credentials: 'omit', keepalive: true,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({ event: name })
     }).catch(() => {});
   }
@@ -22,10 +22,27 @@
   const entry = params.get('from');
   if (entry) event(entry.startsWith('entry_') ? entry : 'entry_' + entry);
   const entrySource = new Set(['menu', 'home', 'ap', 'sat', 'act']).has(entry) ? entry : 'direct';
-  document.querySelectorAll('.checkout-form').forEach(form => {
+  let checkoutReady = false;
+  const checkoutForms = document.querySelectorAll('.checkout-form');
+  checkoutForms.forEach(form => {
     form.elements.namedItem('entry_source').value = entrySource;
-    form.addEventListener('submit', () => event('checkout_click'));
+    form.addEventListener('submit', e => {
+      if (!checkoutReady) { e.preventDefault(); return; }
+      event('checkout_click');
+    });
   });
+
+  fetch(worker + '/health', { mode: 'cors', credentials: 'omit', cache: 'no-store', signal: AbortSignal.timeout(8000) })
+    .then(response => response.ok ? response.json() : null)
+    .then(status => {
+      checkoutReady = status?.service === 'exam-practice-review-kit' && status.mode === 'live' && status.checkout_enabled === true;
+      checkoutForms.forEach(form => {
+        form.querySelector('button[type="submit"]').disabled = !checkoutReady;
+        form.querySelector('.checkout-status').textContent = checkoutReady
+          ? 'Secure checkout is available.'
+          : 'Checkout is currently unavailable. You can still try the example.';
+      });
+    }).catch(() => {});
 
   const byId = id => document.getElementById(id);
   const attemptStage = byId('attempt-stage');

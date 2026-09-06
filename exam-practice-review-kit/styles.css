@@ -21,3 +21,6 @@ html{scroll-padding-top:120px}
 @media(max-width:760px){html{scroll-padding-top:100px}.hero-member{max-width:330px}}
 @media(max-width:370px){.nav-buy span{display:none}.site-header{gap:12px}}
 @media print{.site-header{position:static}.demo-next-step,.hero-member{display:none!important}}
+
+.checkout-status{font-size:13px;line-height:1.5;max-width:34ch;margin:10px 0 0;color:var(--muted,#526675)}
+.checkout-form button:disabled{opacity:.6;cursor:not-allowed;transform:none}
