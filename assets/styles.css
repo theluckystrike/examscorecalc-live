@@ -241,3 +241,5 @@ h1.tool-title{font-size:clamp(24px,5vw,32px);font-weight:800;line-height:1.1;let
 
 .skip-link{position:absolute;left:-9999px;top:0;z-index:200;background:var(--brand);color:#fff;padding:10px 16px;border-radius:0 0 8px 0;font-size:14px;font-weight:600;text-decoration:none}
 .skip-link:focus{left:0}
+
+.practice-offer{display:flex;gap:24px;align-items:center;justify-content:space-between;border:1px solid #cbdcde;border-left:4px solid #087c78;background:#f0f8f7;padding:24px;margin:26px 0;border-radius:12px}.practice-offer h2{font-size:21px;margin:0 0 8px}.practice-offer p{font-size:15px;line-height:1.6;margin:7px 0;max-width:620px}.practice-offer .practice-offer-note{font-size:13px;color:#536771}.practice-offer>a{flex-shrink:0;font-weight:650;color:#076d68}.nav-links{flex-wrap:wrap}@media(max-width:720px){.practice-offer{display:block}.practice-offer>a{display:inline-block;margin-top:12px}}
