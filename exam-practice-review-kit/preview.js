@@ -10,7 +10,7 @@
   const allowed = new Set(['offer_view', 'preview_used', 'checkout_click', 'entry_menu', 'entry_home', 'entry_ap', 'entry_sat', 'entry_act']);
   const sent = new Set();
   function event(name) {
-    if (qa || !allowed.has(name) || sent.has(name)) return;
+    if (qa || navigator.doNotTrack === '1' || !allowed.has(name) || sent.has(name)) return;
     sent.add(name);
     fetch(worker + '/event', {
       method: 'POST', mode: 'cors', credentials: 'omit', keepalive: true,
