@@ -66,6 +66,12 @@
   function announce(text) { clearTimeout(srTimer); srTimer = setTimeout(function () { srStatus.textContent = text; }, 450); }
 
   var resultEl = document.createElement("div");
+  var qualifiedSent = false;
+  function recordQualified() {
+    if (qualifiedSent) return;
+    window.portfolioAnalytics?.event("qualified_result", "score_calculator");
+    qualifiedSent = true;
+  }
 
   function emptyState(unit) {
     resultEl.innerHTML = '<div class="result-empty"><div class="em-dash">&mdash;</div><p>Enter your scores to see your estimate</p></div>';
@@ -147,6 +153,7 @@
           shareBtn("Estimated " + EXAM.short + " score: " + sc + "/5 (" + pr.toFixed(1) + "% composite) | MC " + mc + "/" + EXAM.mcq.n + ", FRQ " + frqTotal + "/" + EXAM.frq.max + " | via examscorecalc.com") +
           '<div class="estimate-note">Estimate only &mdash; not an official College Board score</div>' +
         "</div>";
+      recordQualified();
       sticky.hidden = false; sticky.removeAttribute("aria-hidden");
       sticky.innerHTML =
         '<span class="sr-score">' + sc + '</span><span class="sr-of">out of 5</span>' +
@@ -206,6 +213,7 @@
           shareBtn("Projected " + EXAM.name + " score: " + total + " " + of + " | via examscorecalc.com") +
           '<div class="estimate-note">Estimate only &mdash; raw-to-scaled varies by test form</div>' +
         "</div>";
+      recordQualified();
       sticky.hidden = false; sticky.removeAttribute("aria-hidden");
       sticky.innerHTML =
         '<span class="sr-score">' + total + '</span><span class="sr-of">' + of + '</span>' +

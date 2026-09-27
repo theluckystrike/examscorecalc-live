@@ -64,7 +64,9 @@
   }
   byId('attempt-unaided').addEventListener('click', () => reveal(false));
   byId('attempt-assisted').addEventListener('click', () => reveal(true));
+  let qualifiedSent = false;
   function result(correct) {
+    if (!qualifiedSent) { window.portfolioAnalytics?.event('qualified_result', 'offer_preview'); qualifiedSent = true; }
     const helped = assisted || usedHelp.checked;
     correctionStage.hidden = true;
     resultStage.hidden = false;
