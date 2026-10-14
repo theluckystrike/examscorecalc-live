@@ -130,6 +130,7 @@
       if (!link) return;
       const target = new URL(link.href, location.href);
       if (target.origin !== location.origin || target.pathname.replace(/\/$/, '') !== productPath.replace(/\/$/, '')) return;
+      if (location.pathname.replace(/\/$/, '') === productPath.replace(/\/$/, '')) return;
       const placements = { menu: 'menu', ap: 'ap_result', sat: 'sat_result', act: 'act_result', home: 'home_result' };
       const from = target.searchParams.get('from');
       const placement = Object.hasOwn(placements, from) ? placements[from] : 'page';
