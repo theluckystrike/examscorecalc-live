@@ -254,3 +254,32 @@ h1.tool-title{font-size:clamp(24px,5vw,32px);font-weight:800;line-height:1.1;let
 .practice-offer>a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 18px;border-radius:7px;background:#076d68;color:#fff;text-decoration:none;font-size:15px}
 .practice-offer>a:hover{background:#055750}.practice-offer>a:focus-visible{outline-color:#076d68}
 @media(max-width:720px){.nav{gap:4px;padding-left:16px;padding-right:16px}.nav-links{width:100%;gap:2px 14px}.nav-links a{font-size:12px}.practice-offer>a{margin-top:0}}
+
+/* ---------- support CTAs (2026-10-16) ---------- */
+.tip-card{margin:-6px 0 26px;padding:18px 20px;background:var(--card);border:1px solid var(--s200);border-radius:var(--radius-lg)}
+.tip-card[hidden]{display:none}
+section#calc+.tip-card{margin:18px 0 0}
+.tip-card .tip-h{font-size:17px;font-weight:700;letter-spacing:-.01em;color:var(--ink);margin:0 0 4px;line-height:1.3}
+.tip-card p{font-size:14px;color:var(--s600);line-height:1.55;margin:0 0 12px}
+.tip-btns{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tip-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:0 16px;border-radius:var(--radius);border:1.5px solid var(--brand);background:var(--card);color:var(--brand);font-family:var(--sans);font-size:14px;font-weight:700;line-height:1.2;text-decoration:none;box-sizing:border-box;max-width:100%}
+.tip-btn:hover{background:var(--brand-50);text-decoration:none}
+.tip-btn.solid{background:var(--brand);color:#fff}
+.tip-btn.solid:hover{background:#1E3A8A}
+.tip-btn.quiet{border-color:var(--s300);color:var(--ink2)}
+.tip-btn.quiet:hover{background:var(--s100)}
+.tip-btn:focus-visible,.tip-why:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.foot-tip{padding:0 0 22px;margin:0 0 22px;border-bottom:1px solid var(--s200)}
+.foot-tip-head{display:flex;align-items:center;gap:12px;margin:0 0 8px}
+.foot-tip-head img{width:40px;height:40px;border-radius:50%;flex:none;object-fit:cover;background:var(--s200)}
+.foot-tip .tip-h{font-size:16px;font-weight:700;color:var(--ink);margin:0;line-height:1.3}
+.foot-tip p{font-size:13px;color:var(--s600);line-height:1.6;margin:0 0 12px}
+.tip-why{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;font-size:13px;color:var(--s600);text-decoration:underline;text-underline-offset:3px}
+.tip-why:hover{color:var(--ink)}
+.support-face{display:block;width:64px;height:64px;border-radius:50%;object-fit:cover;margin:0 0 14px;background:var(--s200)}
+.support-page .prose{font-size:15px;color:var(--s600)}
+.support-page .prose+.prose{margin-top:12px}
+.support-page .h2{margin-top:28px}
+.support-page .tip-btns{margin:20px 0 10px}
+.support-page .tip-presets{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:4px 0 10px;font-size:14px;color:var(--s600)}
+.support-page .tip-note{font-size:13px;color:var(--s500);margin:0 0 18px}

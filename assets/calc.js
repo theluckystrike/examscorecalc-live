@@ -70,6 +70,7 @@
   function recordQualified() {
     if (qualifiedSent) return;
     window.portfolioAnalytics?.event("qualified_result", "score_calculator");
+    var tip = document.querySelector('[data-support-cta="result"][hidden]'); if (tip) tip.hidden = false;
     qualifiedSent = true;
   }
 
